@@ -5,6 +5,11 @@
   - [x] poetry add django
 - [x] start project
 
+- [x] django 설정
+  - [x] run server
+  - [x] `django_session` 테이블 생성
+  - [x] super user 생성
+
 <br>
 
 ## 추가할 기능
