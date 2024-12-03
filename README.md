@@ -1,3 +1,12 @@
+## SET UP
+
+- [x] poetry 설정
+  - [x] poetry init
+  - [x] poetry add django
+- [x] start project
+
+<br>
+
 ## 추가할 기능
 
 - [ ] 밴드
