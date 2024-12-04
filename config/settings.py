@@ -30,16 +30,26 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = [
+THIRD_PARTY_APPS = [
+    "rest_framework",
+]
+
+CUSTOM_APPS = [
+    "bands.apps.BandsConfig",
+    "comments.apps.CommentsConfig",
+]
+
+SYSTEM_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "bands.apps.BandsConfig",
-    "comments.apps.CommentsConfig",
 ]
+
+INSTALLED_APPS = SYSTEM_APPS + THIRD_PARTY_APPS + CUSTOM_APPS
+
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
