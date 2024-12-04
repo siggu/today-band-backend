@@ -10,7 +10,7 @@ from . import serializers
 class Bands(APIView):
     def get(self, request):
         all_bands = Band.objects.all()
-        serializer = serializers.BandSerializer(
+        serializer = serializers.BandDetailSerializer(
             all_bands,
             many=True,
         )

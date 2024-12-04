@@ -35,13 +35,13 @@
 
 - [x] **GET /api/v1/bands**
   - [x] **view**: 모든 밴드 리스트를 반환
-  - [x] **serializer**: `BandSerializer`(밴드 데이터 직렬화)
+  - [x] **serializer**: `BandDetailSerializer`(밴드 데이터 직렬화)
 
 <br>
 
 - [x] **GET /api/v1/bands/{id}**
   - [x] **view**: 특정 밴드 데이터를 반환
-  - [x] **serializer**: `BandDetailSerializer`(특정 밴드 데이터 직렬화)
+  - [x] **serializer**: `BandDetailSerializer`
 
 <br>
 
