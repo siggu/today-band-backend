@@ -34,6 +34,7 @@ class Band(models.Model):
     members = models.TextField()
     hit_songs = models.CharField(max_length=255)
     music_links = models.TextField(null=True)
+    music_photo = models.TextField(null=True)
     albums = models.TextField()
     awards = models.TextField()
     classification = models.CharField(
