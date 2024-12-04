@@ -1,8 +1,8 @@
 from django.contrib import admin
-from .models import Comments
+from .models import Comment
 
 
-@admin.register(Comments)
+@admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
     list_display = (
         "detail",

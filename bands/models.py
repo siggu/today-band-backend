@@ -8,7 +8,7 @@ class Genre(models.Model):
         return self.name
 
 
-class Bands(models.Model):
+class Band(models.Model):
     name = models.CharField(max_length=255)
     photo = models.URLField()
     formation_date = models.CharField(max_length=10)

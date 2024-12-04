@@ -14,14 +14,14 @@
 
 ## 모델 생성
 
-- [x] `bands` 모델 생성
+- [x] `band` 모델 생성
   - [x] 필드 생성
     - [x] 사진, 이름, 결성일, 데뷔일, 장르, 구성원, 대표곡, 앨범, 수상내역 필드
   - [x] admin 추가
 
 <br>
 
-- [x] `comments` 모델 생성
+- [x] `comment` 모델 생성
   - [x] 필드 생성
     - [x] 내용, 작성 시간 필드
   - [x] admin 추가
@@ -30,7 +30,7 @@
 
 ## REST API
 
-### `bands`
+### `band`
 
 - [ ] **GET /api/v1/bands**
   - [ ] **view**: 모든 밴드 리스트를 반환
@@ -56,7 +56,7 @@
 
 <br>
 
-### `comments`
+### `comment`
 
 - [ ] **GET /api/v1/comments**
   - [ ] **view**: 모든 댓글 데이터를 반환
