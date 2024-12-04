@@ -6,3 +6,10 @@ class BandSerializer(ModelSerializer):
     class Meta:
         model = Band
         fields = ("name",)
+
+
+class BandDetailSerializer(ModelSerializer):
+    class Meta:
+        model = Band
+        fields = "__all__"
+        depth = 1
