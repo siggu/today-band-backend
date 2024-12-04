@@ -8,9 +8,6 @@ class Genre(models.Model):
         return self.name
 
 
-from django.db import models
-
-
 class ClassificationChoices(models.TextChoices):
     GA = ("ga", "가")
     NA = ("na", "나")
@@ -36,6 +33,7 @@ class Band(models.Model):
     genre = models.ManyToManyField(Genre)
     members = models.TextField()
     hit_songs = models.CharField(max_length=255)
+    music_links = models.TextField(null=True)
     albums = models.TextField()
     awards = models.TextField()
     classification = models.CharField(
