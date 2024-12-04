@@ -32,9 +32,9 @@
 
 ### `band`
 
-- [ ] **GET /api/v1/bands**
-  - [ ] **view**: 모든 밴드 리스트를 반환
-  - [ ] **serializer**: `BandSerializer`(밴드 데이터 직렬화)
+- [x] **GET /api/v1/bands**
+  - [x] **view**: 모든 밴드 리스트를 반환
+  - [x] **serializer**: `BandSerializer`(밴드 데이터 직렬화)
 
 <br>
 
