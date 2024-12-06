@@ -27,7 +27,7 @@ class ClassificationChoices(models.TextChoices):
 
 class Band(models.Model):
     name = models.CharField(max_length=255)
-    photo = models.URLField()
+    photo = models.TextField(null=True)
     formation_date = models.CharField(max_length=10)
     debut_date = models.CharField(max_length=10)
     genre = models.ManyToManyField(Genre)
