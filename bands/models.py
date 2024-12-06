@@ -33,6 +33,7 @@ class Band(models.Model):
     genre = models.ManyToManyField(Genre)
     members = models.TextField()
     member_photos = models.TextField(null=True)
+    member_info = models.TextField(null=True)
     hit_songs = models.CharField(max_length=255)
     introduction = models.TextField(null=True)
     music_photo = models.TextField(null=True)
