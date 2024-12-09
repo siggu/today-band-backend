@@ -16,6 +16,15 @@ class Comments(APIView):
         )
         return Response(serializer.data)
 
+    def post(self, request):
+        serializer = serializers.CommentSerializer(data=request.data)
+        if serializer.is_valid():
+            comment = serializer.save()
+            serializer = serializers.CommentSerializer(comment)
+            return Response(serializer.data)
+        else:
+            return Response(serializer.errors)
+
 
 class CommentDetail(APIView):
     def get_object(self, id):

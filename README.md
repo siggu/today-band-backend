@@ -65,9 +65,9 @@
 
 <br>
 
-- [ ] **POST /api/v1/comments**
-  - [ ] **view**: 새 댓글 작성
-  - [ ] **serializer**: `CommentSerializer`
+- [x] **POST /api/v1/comments**
+  - [x] **view**: 새 댓글 작성
+  - [x] **serializer**: `CommentSerializer`
 
 <br>
 
