@@ -59,9 +59,9 @@
 
 ### `comment`
 
-- [ ] **GET /api/v1/comments**
-  - [ ] **view**: 모든 댓글 데이터를 반환
-  - [ ] **serializer**: `CommentSerializer`(댓글 데이터 직렬화)
+- [x] **GET /api/v1/comments**
+  - [x] **view**: 모든 댓글 데이터를 반환
+  - [x] **serializer**: `CommentSerializer`(댓글 데이터 직렬화)
 
 <br>
 
