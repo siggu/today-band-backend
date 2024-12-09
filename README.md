@@ -77,6 +77,6 @@
 
 <br>
 
-- [ ] **DELETE /api/v1/comments/{id}**
-  - [ ] **view**: 특정 댓글 데이터를 삭제
-  - [ ] **serializer**: `CommentDetailSerializer`
+- [x] **DELETE /api/v1/comments/{id}**
+  - [x] **view**: 특정 댓글 데이터를 삭제
+  - [x] **serializer**: `CommentDetailSerializer`
