@@ -15,3 +15,15 @@ class Comments(APIView):
             many=True,
         )
         return Response(serializer.data)
+
+
+class CommentDetail(APIView):
+    def get_object(self, id):
+        try:
+            return Comment.objects.get(id=id)
+        except Comment.DoesNotExist:
+            raise NotFound
+
+    def get(self, request, id):
+        serializer = serializers.CommentDetailSerializer(self.get_object(id))
+        return Response(serializer.data)

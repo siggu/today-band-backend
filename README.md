@@ -71,9 +71,9 @@
 
 <br>
 
-- [ ] **GET /api/v1/comments/{id}**
-  - [ ] **view**: 특정 댓글 데이터를 반환
-  - [ ] **serializer**: `CommentDetailSerializer`(특정 댓글 데이터 직렬화)
+- [x] **GET /api/v1/comments/{id}**
+  - [x] **view**: 특정 댓글 데이터를 반환
+  - [x] **serializer**: `CommentDetailSerializer`(특정 댓글 데이터 직렬화)
 
 <br>
 
