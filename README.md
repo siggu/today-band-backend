@@ -29,6 +29,16 @@
 
 <br>
 
+- [ ] `user` 모델 생성
+  - [ ] 필드 생성
+    - [ ] 사진, 아이디, 비밀번호, 즐겨찾기
+  - [ ] 즐겨찾기 view 추가
+    - [ ] 필드 생성
+      - [ ] 즐겨찾기 밴드 id, 이름, 사진 필드
+  - [ ] admin 추가
+
+<br>
+
 ## REST API
 
 ### `band`
@@ -80,3 +90,41 @@
 - [x] **DELETE /api/v1/comments/{id}**
   - [x] **view**: 특정 댓글 데이터를 삭제
   - [x] **serializer**: `CommentDetailSerializer`
+
+<br>
+
+### `user`
+
+- [ ] **GET /api/v1/users**
+  - [ ] **view**: 모든 유저 데이터 반환
+  - [ ] **serializer**: `UserSerializer`(모든 유저 데이터 직렬화)
+
+<br>
+
+- [ ] **POST /api/v1/users**
+  - [ ] **view**: 새로운 유저 추가
+  - [ ] **serializer**: `UserSerializer`
+
+<br>
+
+- [ ] **GET /api/v1/users/{id}**
+  - [ ] **view**: 특정 유저 데이터를 반환
+  - [ ] **serializer**: `UserDetailSerializer`(특정 유저 데이터 직렬화)
+
+<br>
+
+- [ ] **PUT /api/v1/users/{id}**
+  - [ ] **view**: 특정 유저 데이터 변경
+  - [ ] **serializer**: `UserDetailSerializer`
+
+<br>
+
+- [ ] **DELETE /api/v1/users/{id}**
+  - [ ] **view**: 특정 유저 데이터 삭제
+  - [ ] **serializer**: `UserDetailSerializer`
+
+<br>
+
+- [ ] **GET /api/v1/users/{id}/likes**
+  - [ ] **view**: 특정 유저 즐겨찾기 데이터를 반환
+  - [ ] **serializer**: `UserDetailLikeserializer`(특정 유저 즐겨찾기 데이터 직렬화)
