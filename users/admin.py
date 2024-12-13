@@ -8,6 +8,6 @@ class CustomUserAdmin(UserAdmin):
     fieldsets = (
         (
             "Profiles",
-            {"fields": ("avatar", "name", "password")},
+            {"fields": ("avatar", "name", "password", "email")},
         ),
     )
