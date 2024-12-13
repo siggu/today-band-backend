@@ -4,6 +4,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
 from . import serializers
 from rest_framework.exceptions import ParseError
+from django.contrib.auth import authenticate, login, logout
 
 
 class Me(APIView):
@@ -43,3 +44,29 @@ class Users(APIView):
             return Response(serializer.data)
         else:
             return Response(serializer.errors)
+
+
+class LogIn(APIView):
+    def post(self, request):
+        name = request.data.get("name")
+        password = request.data.get("password")
+        if not name or not password:
+            raise ParseError
+        user = authenticate(
+            request,
+            name=name,
+            password=password,
+        )
+        if user:
+            login(request, user)
+            return Response({"ok": "Welcome!"})
+        else:
+            return Response({"error": "Something Wrong!"})
+
+
+class LogOut(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request):
+        logout(request)
+        return Response({"ok": "See you later!"})
