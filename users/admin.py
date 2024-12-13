@@ -5,4 +5,9 @@ from .models import User
 
 @admin.register(User)
 class CustomUserAdmin(UserAdmin):
-    pass
+    fieldsets = (
+        (
+            "Profiles",
+            {"fields": ("avatar", "name", "password")},
+        ),
+    )

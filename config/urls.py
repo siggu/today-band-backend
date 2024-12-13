@@ -22,4 +22,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/v1/bands/", include("bands.urls")),
     path("api/v1/comments/", include("comments.urls")),
+    path("api/v1/users/", include("users.urls")),
 ]
