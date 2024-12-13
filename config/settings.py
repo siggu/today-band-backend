@@ -39,6 +39,7 @@ CUSTOM_APPS = [
     "bands.apps.BandsConfig",
     "comments.apps.CommentsConfig",
     "users.apps.UsersConfig",
+    "likes.apps.LikesConfig",
 ]
 
 SYSTEM_APPS = [

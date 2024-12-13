@@ -1,8 +1,7 @@
 from django.db import models
-from common.modles import CommonModel
 
 
-class Likes(CommonModel):
+class Likes(models.Model):
     bands = models.ManyToManyField("bands.Band")
     user = models.ForeignKey(
         "users.User",
