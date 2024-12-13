@@ -48,13 +48,15 @@ class Users(APIView):
 
 class LogIn(APIView):
     def post(self, request):
-        name = request.data.get("name")
+        username = request.data.get("username")
         password = request.data.get("password")
-        if not name or not password:
+        print(f"username: ${username}")
+        print(f"password: ${password}")
+        if not username or not password:
             raise ParseError
         user = authenticate(
             request,
-            name=name,
+            username=username,
             password=password,
         )
         if user:
