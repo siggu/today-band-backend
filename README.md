@@ -99,15 +99,9 @@
 
 ### `user`
 
-- [ ] **GET /api/v1/users**
-  - [ ] **view**: 모든 유저 데이터 반환
-  - [ ] **serializer**: `UserSerializer`(모든 유저 데이터 직렬화)
-
-<br>
-
-- [ ] **POST /api/v1/users**
-  - [ ] **view**: 새로운 유저 추가
-  - [ ] **serializer**: `UserSerializer`
+- [x] **POST /api/v1/users**
+  - [x] **view**: 새로운 유저 추가
+  - [x] **serializer**: `UserSerializer`
 
 <br>
 
