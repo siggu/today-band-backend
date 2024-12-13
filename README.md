@@ -10,6 +10,7 @@
   - [x] `django_session` 테이블 생성
   - [x] super user 생성
   - [x] django-cors-headers 설치
+  - [x] `authtoken` 설치
 
 <br>
 
