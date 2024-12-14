@@ -23,4 +23,5 @@ urlpatterns = [
     path("api/v1/bands/", include("bands.urls")),
     path("api/v1/comments/", include("comments.urls")),
     path("api/v1/users/", include("users.urls")),
+    path("api/v1/likes/", include("likes.urls")),
 ]

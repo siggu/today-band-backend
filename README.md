@@ -106,9 +106,9 @@
 
 <br>
 
-- [ ] **GET /api/v1/users/{id}**
-  - [ ] **view**: 특정 유저 데이터를 반환
-  - [ ] **serializer**: `UserDetailSerializer`(특정 유저 데이터 직렬화)
+- [x] **GET /api/v1/users/me**
+  - [x] **view**: 본인 유저 데이터를 반환
+  - [x] **serializer**: `UserDetailSerializer`(본인 유저 데이터 직렬화)
 
 <br>
 
@@ -124,6 +124,6 @@
 
 <br>
 
-- [ ] **GET /api/v1/users/{id}/likes**
-  - [ ] **view**: 특정 유저 즐겨찾기 데이터를 반환
-  - [ ] **serializer**: `UserDetailLikeserializer`(특정 유저 즐겨찾기 데이터 직렬화)
+- [x] **GET /api/v1/users/likes**
+  - [x] **view**: 특정 유저 즐겨찾기 데이터를 반환
+  - [x] **serializer**: `UserDetailLikeserializer`(특정 유저 즐겨찾기 데이터 직렬화)
