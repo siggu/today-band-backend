@@ -42,9 +42,6 @@ class Band(models.Model):
     classification = models.CharField(
         max_length=3, choices=ClassificationChoices.choices, default="ga"
     )
-    user = models.ForeignKey(
-        "users.User", on_delete=models.CASCADE, related_name="bands"
-    )
 
     def __str__(self):
         return self.name
