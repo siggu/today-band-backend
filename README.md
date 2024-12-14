@@ -100,7 +100,7 @@
 
 ### `user`
 
-- [x] **POST /api/v1/users**
+- [x] **POST /api/v1/users/sign-up**
   - [x] **view**: 새로운 유저 추가
   - [x] **serializer**: `UserSerializer`
 
