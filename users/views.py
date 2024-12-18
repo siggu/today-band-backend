@@ -45,6 +45,7 @@ class SignUp(APIView):
 
             user = User.objects.create(
                 username=username,
+                name=username,
             )
             user.set_password(password)
             user.save()
