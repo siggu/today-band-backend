@@ -1,0 +1,24 @@
+databases:
+  - name: today-band
+    plan: free
+    databaseName: today-band
+    user: today-band
+    region: singapore
+
+services:
+  - type: web
+    plan: free
+    name: today-band
+    runtime: python
+    region: singapore
+    buildCommand: './build.sh'
+    startCommand: 'python -m gunicorn today-band.asgi:application -k uvicorn.workers.UvicornWorker'
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: today-band
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: WEB_CONCURRENCY
+        value: 4
