@@ -1,21 +1,21 @@
 databases:
-  - name: today_band
+  - name: todayband
     plan: free
-    databaseName: today_band
-    user: today_band
+    databaseName: todayband
+    user: todayband
     region: singapore
 services:
   - type: web
     plan: free
-    name: today_band
+    name: today-band
     runtime: python
     region: singapore
     buildCommand: './build.sh'
-    startCommand: 'python -m gunicorn today_band.asgi:application -k uvicorn.workers.UvicornWorker'
+    startCommand: 'gunicorn config.asgi:application -k uvicorn.workers.UvicornWorker'
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: today_band
+          name: todayband
           property: connectionString
       - key: SECRET_KEY
         generateValue: true
