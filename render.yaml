@@ -1,10 +1,9 @@
 databases:
   - name: today-band
     plan: free
-    databaseName: today-band
-    user: today-band
+    databaseName: today_band
+    user: today_band
     region: singapore
-
 services:
   - type: web
     plan: free
