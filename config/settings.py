@@ -36,6 +36,7 @@ DEBUG = "RENDER" not in os.environ
 ALLOWED_HOSTS = [
     "localhost",
     "backend.today-band.site",
+    "today-band.onrender.com",
 ]
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get("RENDER_EXTERNAL_HOSTNAME")
