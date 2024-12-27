@@ -1,5 +1,5 @@
 databases:
-  - name: todayband
+  - name: todayband-db
     plan: free
     databaseName: todayband
     user: todayband
@@ -7,7 +7,7 @@ databases:
 services:
   - type: web
     plan: free
-    name: today-band
+    name: today-band-backend
     runtime: python
     region: singapore
     buildCommand: './build.sh'

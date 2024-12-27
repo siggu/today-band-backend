@@ -192,6 +192,8 @@ CORS_ALLOW_CREDENTIALS = True
 
 
 if not DEBUG:
+    SESSION_COOKIE_DOMAIN = ".today-band.site"
+    SCRF_COOKIE_DOMAIN = ".today-band.site"
     sentry_sdk.init(
         dsn="https://205e7fd3776e0fee85097da0ef889b28@o4506754909667328.ingest.us.sentry.io/4508538903592960",
     )
