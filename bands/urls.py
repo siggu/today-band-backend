@@ -6,4 +6,5 @@ from .models import Band
 urlpatterns = [
     path("", views.Bands.as_view()),
     path("<int:id>", views.BandDetail.as_view()),
+    path("make-error", views.make_error),
 ]

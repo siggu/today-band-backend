@@ -14,6 +14,7 @@ import os
 import environ
 from pathlib import Path
 import dj_database_url
+import sentry_sdk
 
 env = environ.Env()
 
@@ -186,3 +187,12 @@ CORS_ALLOW_CREDENTIALS = True
 CSRF_TRUSTED_ORIGINS = [
     "http://127.0.0.1:3000",
 ]
+
+if not DEBUG:
+    sentry_sdk.init(
+        dsn="https://205e7fd3776e0fee85097da0ef889b28@o4506754909667328.ingest.us.sentry.io/4508538903592960",
+        traces_sample_rate=1.0,
+        _experiments={
+            "continuous_profiling_auto_start": True,
+        },
+    )

@@ -32,3 +32,7 @@ class BandDetail(APIView):
         band = self.get_object(id)
         band.delete()
         return Response(status=HTTP_204_NO_CONTENT)
+
+
+def make_error(request):
+    division_by_zero = 1 / 0
