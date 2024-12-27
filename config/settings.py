@@ -191,8 +191,4 @@ CSRF_TRUSTED_ORIGINS = [
 if not DEBUG:
     sentry_sdk.init(
         dsn="https://205e7fd3776e0fee85097da0ef889b28@o4506754909667328.ingest.us.sentry.io/4508538903592960",
-        traces_sample_rate=1.0,
-        _experiments={
-            "continuous_profiling_auto_start": True,
-        },
     )
