@@ -39,7 +39,7 @@ class SignUp(APIView):
             username = request.data.get("username")
             password = request.data.get("password")
 
-            if User.objects.filter(username=username):
+            if User.objects.filter(username=username).exists():
                 return Response(
                     {"fail": "이미 존재하는 이름입니다."},
                     status=status.HTTP_400_BAD_REQUEST,
@@ -55,16 +55,24 @@ class SignUp(APIView):
             # 사용자에 대한 토큰 생성
             token, created = Token.objects.get_or_create(user=user)
 
-            # 사용자 로그인
-            login(request, user)
+            print(token)
 
-            return Response(
-                {
-                    "ok": "회원가입 성공!",
-                    "token": token.key,
-                },
-                status=status.HTTP_201_CREATED,
-            )
+            # 사용자 인증 및 로그인
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return Response(
+                    {
+                        "ok": "회원가입 성공!",
+                        "token": token.key,
+                    },
+                    status=status.HTTP_201_CREATED,
+                )
+            else:
+                return Response(
+                    {"error": "회원가입 후 로그인에 실패했습니다."},
+                    status=status.HTTP_400_BAD_REQUEST,
+                )
         except Exception as e:
             print(e)
             return Response(
@@ -78,23 +86,19 @@ class LogIn(APIView):
         username = request.data.get("username")
         password = request.data.get("password")
 
-        # print(request.data)
-        # print(username, password)
-
         if not username or not password:
-            raise ParseError
+            raise ParseError("Username and password are required")
+
         user = authenticate(
             username=username,
             password=password,
         )
 
-        user = User.objects.filter(username=username).first()
-        print(user.check_password(password))
-
-        if user:
+        if user is not None:
+            # 올바른 사용자와 패스워드인 경우
             login(request, user)
-            print(request.session.session_key)  # 세션 키 출력
-            return Response({"ok": "Welcome!"})
+            token, created = Token.objects.get_or_create(user=user)
+            return Response({"ok": "Welcome!", "token": token.key})
         else:
             return Response(
                 {"error": "Invalid username or password"},
