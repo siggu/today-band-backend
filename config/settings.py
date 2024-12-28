@@ -35,6 +35,7 @@ DEBUG = "RENDER" not in os.environ
 
 ALLOWED_HOSTS = [
     "localhost",
+    "127.0.0.1",
     "backend.today-band.site",
     "today-band.onrender.com",
 ]
