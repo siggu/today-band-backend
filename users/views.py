@@ -12,6 +12,7 @@ class Me(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
+        print(request.user)
         user = request.user
         serializer = serializers.UserSerializer(user)
         return Response(serializer.data)
@@ -60,8 +61,8 @@ class LogIn(APIView):
         username = request.data.get("username")
         password = request.data.get("password")
 
-        print(request.data)
-        print(username, password)
+        # print(request.data)
+        # print(username, password)
 
         if not username or not password:
             raise ParseError
@@ -69,8 +70,13 @@ class LogIn(APIView):
             username=username,
             password=password,
         )
+
+        user = User.objects.filter(username=username).first()
+        print(user.check_password(password))
+
         if user:
             login(request, user)
+            print(request.session.session_key)  # 세션 키 출력
             return Response({"ok": "Welcome!"})
         else:
             return Response(
