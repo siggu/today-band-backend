@@ -6,6 +6,7 @@ from . import serializers
 from rest_framework.exceptions import ParseError
 from django.contrib.auth import authenticate, login, logout
 from users.models import User
+from rest_framework.authtoken.models import Token
 
 
 class Me(APIView):
@@ -50,10 +51,26 @@ class SignUp(APIView):
             )
             user.set_password(password)
             user.save()
+
+            # 사용자에 대한 토큰 생성
+            token, created = Token.objects.get_or_create(user=user)
+
+            # 사용자 로그인
             login(request, user)
-            return Response(status=status.HTTP_200_OK)
-        except Exception:
-            return Response(status=status.HTTP_400_BAD_REQUEST)
+
+            return Response(
+                {
+                    "ok": "회원가입 성공!",
+                    "token": token.key,
+                },
+                status=status.HTTP_201_CREATED,
+            )
+        except Exception as e:
+            print(e)
+            return Response(
+                {"error": "회원가입 중 오류가 발생했습니다."},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
 
 
 class LogIn(APIView):
